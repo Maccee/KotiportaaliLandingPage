@@ -1,0 +1,186 @@
+body {
+  font-size: 62.5%;
+  font-weight: 300;
+  font-family: "Quicksand", sans-serif;
+  background-color: black;
+  color: white;
+  background-image: url(./house.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -10rem;
+  position: relative; /* added this to make body a positioned ancestor */
+  height: 100%;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* 0.5 is the transparency level, adjust as needed */
+  pointer-events: none; /* ensures the overlay doesn't interfere with any interactions */
+  z-index: -1; /* ensures the overlay is behind the actual content */
+}
+hr {
+  width: 0%;
+  margin-block-start: 0.3rem;
+  transition: width 2s ease-in-out;
+  animation: expandHR 2s forwards; /* Use the animation */
+}
+
+@keyframes expandHR {
+  to {
+    width: 100%;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh; /* This will ensure that the content stays vertically centered */
+}
+
+.main {
+  animation: fadeInAndMoveUp 2s ease forwards;
+  position: relative;
+  opacity: 0.9;
+  letter-spacing: 1rem;
+  font-size: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeInAndMoveUp {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0); /* Stays in the center */
+  }
+
+  89% {
+    opacity: 1;
+    transform: translateY(0); /* Stays in the center */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-3rem); /* Moves 10rem up from the center */
+  }
+}
+
+.tech-info {
+  animation: fadeIn 2s ease forwards;
+  text-align: center;
+  padding: 0rem 0rem;
+  color: #d9d9d9; /* A softer white */
+  font-size: 2rem;
+}
+
+.tech-info h2 {
+  font-size: 2.4rem;
+
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  color: white; /* A brighter white for the header */
+}
+
+.tech-info p {
+  margin: 1rem 0;
+}
+
+.tech-info span {
+  font-weight: 600;
+  color: #f4a261; /* A soft orange for emphasis */
+  transition: color 0.3s ease;
+}
+
+.tech-info span:hover {
+  color: #f08d49; /* A slightly darker orange for hover effect */
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.demo-button-container {
+  visibility: hidden; /* Start with the button not visible */
+  opacity: 0; /* Start with hidden button */
+  transform: scale(0.1); /* shrink the button */
+  display: flex; /* We'll keep this constant */
+  justify-content: center;
+  margin: 0rem 0 2rem 0;
+  animation: growAndFadeInButton 2s ease forwards; /* New animation name */
+}
+
+.demo-button {
+  background-color: #f4a261; /* Soft orange color matching the text highlights */
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 1rem 2.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.demo-button:hover {
+  background-color: #f08d49; /* Slightly darker orange for hover */
+}
+@keyframes growAndFadeInButton {
+  0% {
+  }
+  70% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+  }
+  89% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1); /* grow to original size */
+  }
+}
+
+@media (max-width: 862px) {
+  .main {
+    font-size: 4rem; /* Adjust this size based on your requirements */
+  }
+  .tech-info {
+    font-size: 1.2rem;
+  }
+  .tech-info h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 550px) {
+  .main {
+    font-size: 4rem; /* Adjust this size based on your requirements */
+    letter-spacing: 0rem;
+  }
+  .tech-info {
+    font-size: 1rem;
+  }
+  .tech-info h2 {
+    font-size: 1.2rem;
+  }
+}
