@@ -3,7 +3,7 @@ body {
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   background-color: black;
-  color: white;
+  color: #e6e6e6;
   background-image: url(./house.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,6 +38,7 @@ body {
 }
 .main div {
   font-size: 6rem;
+  letter-spacing: 1rem;
 }
 @keyframes animateWidth {
   0% {
@@ -52,8 +53,9 @@ body {
   }
 }
 .main hr {
+  border-top: 1px dotted #e6e6e6;
   visibility: hidden;
-  margin-block-start: 0;
+  margin-block-start: 1rem;
   margin-block-end: 0;
   width: 0;
   transition: width 1s;
@@ -79,12 +81,12 @@ body {
   opacity: 0; /* Initial state */
   transform: scale(0);
   animation: fadeInScaleUp 1s forwards;
-  animation-delay: 2.5s; /* Assuming the button should start its animation 1 second after the .tech-info animation */
+  animation-delay: 0.8s; /* Assuming the button should start its animation 1 second after the .tech-info animation */
 }
 
 .demo-button {
   background-color: #ef8d49; /* Adjust as per your preference */
-  color: #fff;
+  color: #e6e6e6;
   border: none;
   padding: 1rem 2rem; /* Adjust for size */
   font-size: 1.8rem; /* Font size */
@@ -120,14 +122,14 @@ body {
 
 .tech-info {
   opacity: 0; /* Initial state */
-  animation: fadeIn 1s forwards;
-  animation-delay: 2s; /* Since the .main animation duration is 2s */
+  animation: fadeIn 0.2s forwards;
+  animation-delay: 1.35s; /* Since the .main animation duration is 2s */
 }
 .tech-info {
   text-align: center; /* Center the content */
   padding: 1rem; /* Spacing around the content */
   font-size: 1.8rem; /* Base font size */
-  line-height: 1.3; /* Spacing between lines for better readability */
+  line-height: 1.5; /* Spacing between lines for better readability */
   color: #e6e6e6; /* A slightly lighter color than pure white for a softer look */
   max-width: 80%; /* Contain the width for better readability on wider screens */
   margin: 0 auto; /* Center the content block on the page */
